@@ -1,11 +1,11 @@
 import React from 'react';
 
-import classes from './Layout.css';
+import styles from './Lejaut.module.css';
 
 const layout = (props) => (
 	<div>
-		<div>Toolbar, SideDraw, Backdrop</div>
-		<main className={classes.Content}>
+		<div >Toolbar, SideDraw, Backdrop</div>
+		<main className={styles.Content}>
 			{props.children}
 		</main>
 	</div>
