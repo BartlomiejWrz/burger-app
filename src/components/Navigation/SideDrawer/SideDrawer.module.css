@@ -16,6 +16,7 @@
 	.SideDrawer{
 		display: none;
 	}
+	
 }
 
 .Open {
@@ -24,4 +25,9 @@
 
 .Close{
 	transform: translateX(-100%);
+}
+
+.Logo {
+	height: 11%;
+	margin-bottom:32px;
 }

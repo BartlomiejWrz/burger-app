@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import styles from './Lejaut.module.css';
 import Toolbar from "../Navigation/Toolbar/Toolbar";
 import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
 
-const layout = (props) => (
-	<div>
-		<Toolbar />
-		<SideDrawer />
-		<main className={styles.Content}>
-			{props.children}
-		</main>
-	</div>
-);
+class Layout extends Component {
+	state = {
+		showSideDrawer: true
+	}
 
-export default layout;
+	sideDrawerClosedHandler = () => {
+		this.setState({ showSideDrawer: false })
+	}
+
+	render() {
+		return (
+			<div>
+				<Toolbar />
+				<SideDrawer
+					open={this.state.showSideDrawer}
+					closed={this.sideDrawerClosedHandler} />
+				<main className={styles.Content}>
+					{this.props.children}
+				</main>
+			</div>)
+	}
+}
+
+export default Layout;
